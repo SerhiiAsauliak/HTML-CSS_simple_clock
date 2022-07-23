@@ -1,0 +1,118 @@
+body {
+   margin: 0;
+   background: #fff;
+   background-image: radial-gradient(#FFAE38 2px, transparent 1px);
+   background-size: 20px 20px;
+}
+
+.container {
+   width: 200px;
+   height: 200px;
+   position: absolute;
+   left: calc(50% - 100px);
+   top: calc(50% - 100px);
+}
+
+.clock {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   border-radius: 25px;
+   background: #BDD0D7;
+   -webkit-box-shadow: 5px 4px 5px 2px rgba(169, 186, 192, 0.98);
+   box-shadow: 5px 4px 5px 2px rgba(169, 186, 192, 0.98);
+}
+
+.clock-inner {
+   width: 160px;
+   height: 160px;
+   background: #fff;
+   border-radius: 100%;
+   position: absolute;
+   left: calc(50% - 80px);
+   top: calc(50% - 80px);
+   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, .3), inset -2px -2px 4px rgba(0, 0, 0, .3);
+}
+
+.clock-inner__numbers {
+   padding-left: 0;
+   margin: 0;
+   list-style: none;
+   position: absolute;
+   width: 120px;
+   height: 120px;
+   left: calc(50% - 60px);
+   top: calc(50% - 60px);
+}
+
+.clock-inner__numbers li {
+   position: absolute;
+   font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+   text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+   color: #544E3E;
+}
+
+.clock-inner__numbers li:nth-child(1) {
+   top: -10px;
+   left: calc(50% - 10px);
+}
+
+.clock-inner__numbers li:nth-child(2) {
+   top: calc(50% - 10px);
+   right: -10px;
+}
+
+.clock-inner__numbers li:nth-child(3) {
+   bottom: -10px;
+   left: calc(50% - 5px);
+}
+
+.clock-inner__numbers li:nth-child(4) {
+   top: calc(50% - 10px);
+   left: -10px;
+}
+.clock-inner__minutes {
+   height: 60px;
+   width: 2px;
+   border-radius: 2px;
+   background: #D56851;
+   position: absolute;
+   left: 50%;
+   top: 22px;
+   -webkit-transform-origin: 1px 60px;
+   transform-origin: 1px 60px;
+   -webkit-animation: clock 60s steps(60, end) infinite;
+   -moz-animation: clock 60s steps(60, end) infinite;
+   animation: clock 60s steps(60, end) infinite;
+}
+.clock:hover .clock-inner__minutes{
+   -webkit-animation-play-state: paused;
+   animation-play-state: paused;
+ }
+.clock-inner__minutes::before {
+   content: '';
+   position: absolute;
+   border-radius: 100%;
+   top: calc(100% - 3px);
+   left: calc(100% - 4px);
+   width: 5px;
+   height: 5px;
+   background: #D56851;
+}
+@-webkit-keyframes clock {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(360deg);}
+ }
+@-moz-keyframes clock {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(360deg);}
+}
+@-keyframes clock{
+   from {transform: rotate(0deg)};
+   to {transform: rotate(360deg)};
+}
+.text {
+   font-family: monospace;
+   font-size: 20px;
+   padding-left: 25px;
+}
